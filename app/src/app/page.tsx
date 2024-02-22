@@ -5,12 +5,19 @@ import React, { useState, useRef } from "react";
 export default function Home() {
   const [salary, setSalary] = useState(1000);
   const [time, setTime] = useState(0);
+  const [isRunning, setIsRunning] = useState(false);
   const intervalRef = useRef(null);
 
   function handleStart() {
+    setIsRunning(true);
     intervalRef.current = setInterval(() => {
       setTime(countTime => countTime + 1);
     }, 1000);
+  }
+
+  function handlePause() {
+    clearInterval(intervalRef.current);
+    setIsRunning(false);
   }
 
   return (
@@ -28,7 +35,7 @@ export default function Home() {
       </div>
       <div>
         <button onClick={handleStart}>Start</button>
-        <button>Stop</button>
+        <button onClick={handlePause}>Pause</button>
         <button>Reset</button>
       </div>
       <div>
