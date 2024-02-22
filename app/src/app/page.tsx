@@ -20,6 +20,10 @@ export default function Home() {
     setIsRunning(false);
   }
 
+  function handleReset() {
+    setTime(0);
+  }
+
   return (
     <div>
       <h1>SALARY TIMER</h1>
@@ -36,7 +40,7 @@ export default function Home() {
       <div>
         <button onClick={handleStart}>Start</button>
         <button onClick={handlePause}>Pause</button>
-        <button>Reset</button>
+        <button onClick={handleReset}>Reset</button>
       </div>
       <div>
         {time}秒
