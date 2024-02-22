@@ -9,6 +9,9 @@ export default function Home() {
   const intervalRef = useRef(null);
 
   function handleStart() {
+    if (isRunning) {
+      return;
+    }
     setIsRunning(true);
     intervalRef.current = setInterval(() => {
       setTime(countTime => countTime + 1);
