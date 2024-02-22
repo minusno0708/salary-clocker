@@ -27,6 +27,22 @@ export default function Home() {
     setTime(0);
   }
 
+  const digit = 2;
+  function displayStrSalary(salary: number): string {
+    let roundSalary: number = Math.round(salary * Math.pow(10, digit)) / Math.pow(10, digit);
+    let salaryStr: string = roundSalary.toString();
+    let dotIndex: number = salaryStr.indexOf(".");
+    if (dotIndex === -1) {
+      salaryStr += ".";
+      dotIndex = salaryStr.length - 1;
+    }
+    let zeroCount: number = digit - (salaryStr.length - dotIndex - 1);
+    for (let i = 0; i < zeroCount; i++) {
+      salaryStr += "0";
+    }
+    return salaryStr;
+  }
+
   return (
     <div>
       <h1>SALARY WATCHER</h1>
@@ -38,7 +54,7 @@ export default function Home() {
           onChange={(event) => setSalary(event.target.value)}
         />
         円
-        <p>秒単価:{salary/(60*60)}円</p>
+        <p>秒単価:{displayStrSalary(salary/(60 * 60))}円</p>
       </div>
       <div>
         <button onClick={handleStart}>Start</button>
@@ -47,7 +63,7 @@ export default function Home() {
       </div>
       <div>
         総額:
-        {time * salary/(60*60)}円
+        {displayStrSalary(time * salary/(60 * 60))}円
       </div>
     </div>
   );
