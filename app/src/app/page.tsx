@@ -1,9 +1,17 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 export default function Home() {
   const [salary, setSalary] = useState(1000);
+  const [time, setTime] = useState(0);
+  const intervalRef = useRef(null);
+
+  function handleStart() {
+    intervalRef.current = setInterval(() => {
+      setTime(countTime => countTime + 1);
+    }, 1000);
+  }
 
   return (
     <div>
@@ -19,9 +27,12 @@ export default function Home() {
         <p>秒単価:{salary/(60*60)}円</p>
       </div>
       <div>
-        <button>Start</button>
+        <button onClick={handleStart}>Start</button>
         <button>Stop</button>
         <button>Reset</button>
+      </div>
+      <div>
+        {time}秒
       </div>
     </div>
   );
