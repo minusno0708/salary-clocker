@@ -29,7 +29,7 @@ export default function Home() {
 
   return (
     <div>
-      <h1>SALARY TIMER</h1>
+      <h1>SALARY WATCHER</h1>
       <div>
         時給:
         <input 
@@ -46,7 +46,8 @@ export default function Home() {
         <button onClick={handleReset}>Reset</button>
       </div>
       <div>
-        {time}秒
+        総額:
+        {time * salary/(60*60)}円
       </div>
     </div>
   );
