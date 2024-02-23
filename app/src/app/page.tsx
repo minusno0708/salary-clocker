@@ -43,6 +43,23 @@ export default function Home() {
     return Strsalary;
   }
 
+  function displayTime(time: number): string {
+    let hour: number = Math.floor(time / 3600);
+    let minute: number = Math.floor((time % 3600) / 60);
+    let second: number = time % 60;
+
+    let StrTime: string = "";
+    if (hour > 0) {
+      StrTime += hour.toString() + "時間";
+    }
+    if (minute > 0) {
+      StrTime += minute.toString() + "分";
+    }
+    StrTime += second.toString() + "秒";
+
+    return StrTime;
+  }
+
   return (
     <div>
       <h1>SALARY CLOCKER</h1>
@@ -64,6 +81,10 @@ export default function Home() {
       <div>
         総額:
         {displayStrSalary(time * salary/(60 * 60))}円
+      </div>
+      <div>
+        作業時間:
+        {displayTime(time)}
       </div>
     </div>
   );
