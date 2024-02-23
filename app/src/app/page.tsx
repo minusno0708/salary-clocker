@@ -30,22 +30,22 @@ export default function Home() {
   const digit = 2;
   function displayStrSalary(salary: number): string {
     let roundSalary: number = Math.round(salary * Math.pow(10, digit)) / Math.pow(10, digit);
-    let salaryStr: string = roundSalary.toString();
-    let dotIndex: number = salaryStr.indexOf(".");
+    let Strsalary: string = roundSalary.toString();
+    let dotIndex: number = Strsalary.indexOf(".");
     if (dotIndex === -1) {
-      salaryStr += ".";
-      dotIndex = salaryStr.length - 1;
+      Strsalary += ".";
+      dotIndex = Strsalary.length - 1;
     }
-    let zeroCount: number = digit - (salaryStr.length - dotIndex - 1);
+    let zeroCount: number = digit - (Strsalary.length - dotIndex - 1);
     for (let i = 0; i < zeroCount; i++) {
-      salaryStr += "0";
+      Strsalary += "0";
     }
-    return salaryStr;
+    return Strsalary;
   }
 
   return (
     <div>
-      <h1>SALARY WATCHER</h1>
+      <h1>SALARY CLOCKER</h1>
       <div>
         時給:
         <input 
