@@ -65,15 +65,18 @@ export default function Home() {
       <div className="bg-yellow-900 py-2 w-full flex-col flex items-center">
         <h1 className="text-5xl tracking-wider font-black">SALARY CLOCKER</h1>
       </div>
-      <div>
-        時給:
-        <input 
-          type="number" 
-          value={salary}
-          onChange={(event) => setSalary(event.target.value)}
-        />
+      <div className="flex-col flex items-center">
+        <p className="text-2xl">
+        時給
+          <input 
+            type="number" 
+            value={salary}
+            onChange={(event) => setSalary(event.target.value)}
+            className="border border-gray-300 rounded-lg text-gray-900 text-center w-24 h-10"
+          />
         円
-        <p>秒単価:{displayStrSalary(salary/(60 * 60))}円</p>
+        </p>
+        <p className="text-1xl">秒単価:{displayStrSalary(salary/(60 * 60))}円</p>
       </div>
       <div>
         <button onClick={handleStart}>Start</button>
