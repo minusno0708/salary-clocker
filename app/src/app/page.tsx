@@ -90,10 +90,13 @@ export default function Home() {
         </p>
         <p className="text-1xl">秒単価:{displayStrSalary(salary/(60 * 60))}円</p>
       </div>
-      <div>
-        <button onClick={handleStart}>Start</button>
-        <button onClick={handlePause}>Pause</button>
-        <button onClick={handleReset}>Reset</button>
+      <div className="flex items-center justify-center">
+        <button className="text-white bg-yellow-700 hover:bg-yellow-800 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-yellow-900 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800"
+          onClick={handleStart}>Start</button>
+        <button className="text-white bg-yellow-700 hover:bg-yellow-800 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-yellow-900 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800"
+          onClick={handlePause}>Pause</button>
+        <button className="text-white bg-yellow-700 hover:bg-yellow-800 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-yellow-900 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800"
+          onClick={handleReset}>Reset</button>
       </div>
       <div>
         総額:
