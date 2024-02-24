@@ -76,14 +76,17 @@ export default function Home() {
           />
         円
         </p>
-        <p>
+        <p className="text-1xl">
+          <span>￥100</span>
           <input
             type="range"
-            min="800"
-            max="9999"
+            min="100"
+            max="3000"
             value={salary}
             onChange={(event) => setSalary(event.target.value)}
+            className="w-96"
           />
+          <span>￥3000</span>
         </p>
         <p className="text-1xl">秒単価:{displayStrSalary(salary/(60 * 60))}円</p>
       </div>
