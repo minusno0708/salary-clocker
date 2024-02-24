@@ -61,8 +61,10 @@ export default function Home() {
   }
 
   return (
-    <div>
-      <h1>SALARY CLOCKER</h1>
+    <div className="bg-yellow-500 min-h-screen">
+      <div className="bg-yellow-900 py-2 w-full flex-col flex items-center">
+        <h1 className="text-5xl tracking-wider font-black">SALARY CLOCKER</h1>
+      </div>
       <div>
         時給:
         <input 
