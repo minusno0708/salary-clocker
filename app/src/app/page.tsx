@@ -98,13 +98,15 @@ export default function Home() {
         <button className="text-white bg-yellow-700 hover:bg-yellow-800 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-yellow-900 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800"
           onClick={handleReset}>Reset</button>
       </div>
-      <div>
-        総額:
-        {displayStrSalary(time * salary/(60 * 60))}円
-      </div>
-      <div>
-        作業時間:
-        {displayTime(time)}
+      <div className="flex-col flex items-center">
+        <div>
+          総額:
+          {displayStrSalary(time * salary/(60 * 60))}円
+        </div>
+        <div>
+          作業時間:
+          {displayTime(time)}
+        </div>
       </div>
     </div>
   );
