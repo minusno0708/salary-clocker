@@ -65,7 +65,7 @@ export default function Home() {
       <div className="bg-yellow-900 py-2 w-full flex-col flex items-center">
         <h1 className="text-5xl tracking-wider font-black">SALARY CLOCKER</h1>
       </div>
-      <div className="flex-col flex items-center">
+      <div className="flex-col flex items-center mt-10">
         <p className="text-3xl">
         時給
           <input 
@@ -84,13 +84,13 @@ export default function Home() {
             max="3000"
             value={salary}
             onChange={(event) => setSalary(event.target.value)}
-            className="w-96"
+            className="w-96 mt-3"
           />
           <span>￥3000</span>
         </p>
-        <p className="text-2xl">秒単価:{displayStrSalary(salary/(60 * 60))}円</p>
+        <p className="text-2xl mt-5">秒単価:{displayStrSalary(salary/(60 * 60))}円</p>
       </div>
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center mt-5">
         <button className="text-white bg-yellow-700 hover:bg-yellow-800 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-yellow-900 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800"
           onClick={handleStart}>Start</button>
         <button className="text-white bg-yellow-700 hover:bg-yellow-800 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-yellow-900 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800"
@@ -99,11 +99,11 @@ export default function Home() {
           onClick={handleReset}>Reset</button>
       </div>
       <div className="flex-col flex items-center">
-        <div className="text-5xl">
+        <div className="text-5xl mt-10">
           総額:
           {displayStrSalary(time * salary/(60 * 60))}円
         </div>
-        <div className="text-3xl">
+        <div className="text-3xl mt-5">
           作業時間:
           {displayTime(time)}
         </div>
