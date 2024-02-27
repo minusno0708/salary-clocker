@@ -66,7 +66,7 @@ export default function Home() {
         <h1 className="text-5xl tracking-wider font-black">SALARY CLOCKER</h1>
       </div>
       <div className="flex-col flex items-center">
-        <p className="text-2xl">
+        <p className="text-3xl">
         時給
           <input 
             type="number" 
@@ -76,7 +76,7 @@ export default function Home() {
           />
         円
         </p>
-        <p className="text-1xl">
+        <p className="text-2xl">
           <span>￥100</span>
           <input
             type="range"
@@ -88,7 +88,7 @@ export default function Home() {
           />
           <span>￥3000</span>
         </p>
-        <p className="text-1xl">秒単価:{displayStrSalary(salary/(60 * 60))}円</p>
+        <p className="text-2xl">秒単価:{displayStrSalary(salary/(60 * 60))}円</p>
       </div>
       <div className="flex items-center justify-center">
         <button className="text-white bg-yellow-700 hover:bg-yellow-800 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-yellow-900 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800"
@@ -99,11 +99,11 @@ export default function Home() {
           onClick={handleReset}>Reset</button>
       </div>
       <div className="flex-col flex items-center">
-        <div>
+        <div className="text-5xl">
           総額:
           {displayStrSalary(time * salary/(60 * 60))}円
         </div>
-        <div>
+        <div className="text-3xl">
           作業時間:
           {displayTime(time)}
         </div>
