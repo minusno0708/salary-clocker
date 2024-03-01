@@ -100,8 +100,8 @@ export default function Home() {
       </div>
       <div className="flex-col flex items-center">
         <div className="text-yellow-500 text-5xl mt-10">
-          総額:
-          {displayStrSalary(time * salary/(60 * 60))}円
+
+          ￥{displayStrSalary(time * salary/(60 * 60))}
         </div>
         <div className="text-3xl mt-10">
           作業時間:
