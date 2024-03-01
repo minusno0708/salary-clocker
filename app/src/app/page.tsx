@@ -61,9 +61,9 @@ export default function Home() {
   }
 
   return (
-    <div className="bg-yellow-500 min-h-screen">
+    <div className="bg-slate-100 text-yellow-900 min-h-screen">
       <div className="bg-yellow-900 py-2 w-full flex-col flex items-center">
-        <h1 className="text-5xl tracking-wider font-black">SALARY CLOCKER</h1>
+        <h1 className="text-yellow-300 text-5xl tracking-wider font-black">SALARY CLOCKER</h1>
       </div>
       <div className="flex-col flex items-center mt-10">
         <p className="text-3xl">
@@ -99,7 +99,7 @@ export default function Home() {
           onClick={handleReset}>Reset</button>
       </div>
       <div className="flex-col flex items-center">
-        <div className="text-5xl mt-10">
+        <div className="text-yellow-500 text-5xl mt-10">
           総額:
           {displayStrSalary(time * salary/(60 * 60))}円
         </div>
