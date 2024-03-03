@@ -61,30 +61,51 @@ export default function Home() {
   }
 
   return (
-    <div>
-      <h1>SALARY CLOCKER</h1>
-      <div>
-        時給:
-        <input 
-          type="number" 
-          value={salary}
-          onChange={(event) => setSalary(event.target.value)}
-        />
+    <div className="bg-slate-100 text-yellow-900 min-h-screen font-kiwiMaru">
+      <div className="bg-yellow-900 py-2 w-full flex-col flex items-center">
+        <h1 className="text-yellow-300 text-5xl tracking-wider font-black">SALARY CLOCKER</h1>
+      </div>
+      <div className="flex-col flex items-center mt-20">
+        <p className="text-3xl">
+        時給
+          <input 
+            type="number" 
+            value={salary}
+            onChange={(event) => setSalary(event.target.value)}
+            className="bg-slate-100 text-yellow-500 text-center w-24 h-10 ml-1.5 outline-none"
+          />
         円
-        <p>秒単価:{displayStrSalary(salary/(60 * 60))}円</p>
+        </p>
+        <p className="text-2xl mt-3">
+          <span>￥100</span>
+          <input
+            type="range"
+            min="100"
+            max="3000"
+            value={salary}
+            onChange={(event) => setSalary(event.target.value)}
+            className="w-96 mt-3"
+          />
+          <span>￥3000</span>
+        </p>
+        <p className="text-2xl mt-3">秒単価:{displayStrSalary(salary/(60 * 60))}円</p>
       </div>
-      <div>
-        <button onClick={handleStart}>Start</button>
-        <button onClick={handlePause}>Pause</button>
-        <button onClick={handleReset}>Reset</button>
+      <div className="flex items-center justify-center mt-5">
+        <button className="text-white bg-yellow-700 hover:bg-yellow-800 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-yellow-900 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800"
+          onClick={handleStart}>Start</button>
+        <button className="text-white bg-yellow-700 hover:bg-yellow-800 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-yellow-900 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800"
+          onClick={handlePause}>Pause</button>
+        <button className="text-white bg-yellow-700 hover:bg-yellow-800 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-yellow-900 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800"
+          onClick={handleReset}>Reset</button>
       </div>
-      <div>
-        総額:
-        {displayStrSalary(time * salary/(60 * 60))}円
-      </div>
-      <div>
-        作業時間:
-        {displayTime(time)}
+      <div className="flex-col flex items-center">
+        <div className="text-yellow-500 text-5xl mt-10">
+          ￥{displayStrSalary(time * salary/(60 * 60))}
+        </div>
+        <div className="text-3xl mt-10">
+          Time:
+          {displayTime(time)}
+        </div>
       </div>
     </div>
   );
