@@ -103,7 +103,7 @@ export default function Home() {
           ￥{displayStrSalary(time * salary/(60 * 60))}
         </div>
         <div className="text-3xl mt-10">
-          作業時間:
+          Time:
           {displayTime(time)}
         </div>
       </div>
