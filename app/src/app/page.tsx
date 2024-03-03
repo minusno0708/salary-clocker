@@ -72,7 +72,7 @@ export default function Home() {
             type="number" 
             value={salary}
             onChange={(event) => setSalary(event.target.value)}
-            className="border border-gray-300 rounded-lg text-gray-900 text-center w-24 h-10"
+            className="bg-slate-100 text-yellow-500 text-center w-24 h-10 ml-1.5 outline-none"
           />
         円
         </p>
