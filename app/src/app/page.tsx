@@ -61,7 +61,7 @@ export default function Home() {
   }
 
   return (
-    <div className="bg-slate-100 text-yellow-900 min-h-screen font-zenKurenaido">
+    <div className="bg-slate-100 text-yellow-900 min-h-screen font-kiwiMaru">
       <div className="bg-yellow-900 py-2 w-full flex-col flex items-center">
         <h1 className="text-yellow-300 text-5xl tracking-wider font-black">SALARY CLOCKER</h1>
       </div>
@@ -100,7 +100,6 @@ export default function Home() {
       </div>
       <div className="flex-col flex items-center">
         <div className="text-yellow-500 text-5xl mt-10">
-
           ￥{displayStrSalary(time * salary/(60 * 60))}
         </div>
         <div className="text-3xl mt-10">
