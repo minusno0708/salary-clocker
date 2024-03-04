@@ -17,6 +17,12 @@ services:
       - ./build/web/nginx.conf:/etc/nginx/nginx.conf
     depends_on:
       - app
+  wasm:
+    build:
+      context: build/wasm
+      dockerfile: Dockerfile
+    volumes:
+      - ./build/wasm:/app
 
 volumes:
   app_modules:
