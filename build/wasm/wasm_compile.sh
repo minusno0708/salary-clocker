@@ -1,0 +1,1 @@
+docker-compose run wasm /bin/bash -c "wasm-pack build --target web"
